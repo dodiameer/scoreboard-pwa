@@ -4,13 +4,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "serve-https": "PORT=5000 serve dist"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "next",
+    "https-localhost": "^4.6.4",
     "svelte": "^3.35.0",
     "svelte-preprocess": "^4.6.9",
     "typescript": "^4.2.3",
-    "vite": "^2.1.5"
+    "vite": "^2.1.5",
+    "vite-plugin-pwa": "^0.7.2"
   }
 }

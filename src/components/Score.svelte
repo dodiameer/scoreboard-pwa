@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { scores } from "$lib/stores";
   export let team: number = 1;
   $: teamName = `team${team}`;

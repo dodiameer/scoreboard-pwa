@@ -1,10 +1,41 @@
 import { defineConfig } from 'vite'
+import { VitePWA } from "vite-plugin-pwa"
 import svelte from '@sveltejs/vite-plugin-svelte'
 import path from "path"
+// @ts-ignore
+// const svelteConfig = require("./svelte.config.cjs")
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
+  plugins: [
+    svelte(),
+    VitePWA({
+      manifest: {
+        // content of manifest
+        "name": "YNWAScore",
+        "short_name": "YNWAScore",
+        "icons": [
+          {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ],
+        "theme_color": "#d92626",
+        "background_color": "#d92626",
+        "display": "standalone"
+      },
+      workbox: {
+        // workbox options for generateSW 
+      },
+      registerType: "autoUpdate"
+    })
+  ],
   resolve: {
     alias: [
       { find: "$lib", replacement: path.resolve(__dirname, "src", "lib") },
