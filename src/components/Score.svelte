@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { scores, teamNames } from "$lib/stores";
+  import { DEFAULT_VALUES, scores, teamNames } from "$lib/stores";
   export let team: number = 1;
   $: teamName = `team${team}`;
 
@@ -11,10 +11,18 @@
       $scores[teamName] -= 1;
     }
   };
+  const changeTeamName = () => {
+    const newName = prompt(
+      "New team name (Leave blank to use default)",
+      $teamNames[teamName]
+    ).trim();
+    $teamNames[teamName] =
+      newName.length === 0 ? DEFAULT_VALUES.teamNames[teamName] : newName;
+  };
 </script>
 
 <section class="svelte-component-hook score">
-  <h1>{$teamNames[teamName]}</h1>
+  <h1 on:dblclick="{changeTeamName}">{$teamNames[teamName]}</h1>
   <button
     class="main-button"
     on:click="{incrementScore}"
