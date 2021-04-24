@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { scores } from "$lib/stores";
+  import { scores, teamNames } from "$lib/stores";
   export let team: number = 1;
   $: teamName = `team${team}`;
 
@@ -13,7 +13,8 @@
   };
 </script>
 
-<div class="svelte-component-hook score">
+<section class="svelte-component-hook score">
+  <h1>{$teamNames[teamName]}</h1>
   <button
     class="main-button"
     on:click="{incrementScore}"
@@ -21,12 +22,17 @@
     {$scores[teamName]}
   </button>
   <button on:click="{decrementScore}" class="decrement-button">-1</button>
-</div>
+</section>
 
 <style>
-  div {
+  section {
     display: inline-flex;
     flex-direction: column;
+  }
+  h1 {
+    margin: 0;
+    text-align: center;
+    margin-bottom: 1rem;
   }
   button.main-button {
     --dimensions: 18ch;
