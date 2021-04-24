@@ -23,6 +23,9 @@
 
 <section class="svelte-component-hook score">
   <h1 on:dblclick="{changeTeamName}">{$teamNames[teamName]}</h1>
+  <button class="visually-hidden" on:click="{changeTeamName}">
+    Change team name ({$teamNames[teamName]})
+  </button>
   <button
     class="main-button"
     on:click="{incrementScore}"
@@ -36,6 +39,8 @@
   section {
     display: inline-flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   h1 {
     margin: 0;
@@ -52,5 +57,8 @@
   button.decrement-button {
     width: 50%;
     margin: 0.5rem auto;
+  }
+  button.visually-hidden {
+    margin-bottom: 1rem;
   }
 </style>
