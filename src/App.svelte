@@ -4,7 +4,7 @@
 </script>
 
 <header>
-  <h1>Scores</h1>
+  <h1>YNWAScore</h1>
 </header>
 <main>
   <Score team="{1}" />
@@ -14,7 +14,7 @@
 
 <style>
   header {
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
