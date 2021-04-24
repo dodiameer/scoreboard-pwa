@@ -27,6 +27,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 5rem;
   }
   main :global(.svelte-component-hook.score):first-of-type {
     margin-bottom: 2rem;
