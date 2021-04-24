@@ -37,6 +37,7 @@
 
 <style>
   section {
+    --dimensions: 18ch;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -48,15 +49,15 @@
     margin-bottom: 1rem;
   }
   button.main-button {
-    --dimensions: 18ch;
     width: var(--dimensions);
     height: var(--dimensions);
     border-radius: 8px;
     font-size: 1rem;
   }
   button.decrement-button {
-    width: 50%;
-    margin: 0.5rem auto;
+    width: var(--dimensions);
+    margin: 0.5rem;
+    font-size: 1rem;
   }
   button.visually-hidden {
     margin-bottom: 1rem;
