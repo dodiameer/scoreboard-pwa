@@ -15,6 +15,14 @@
   --team2-color: hsl(220, 100%, 60%);
   --team2-text: white;
   --grey: hsl(0, 0%, 75%);
+  /*? Svelte toast position to bottom */
+  --toastContainerTop: auto;
+  --toastContainerRight: auto;
+  --toastContainerBottom: 4rem;
+  --toastContainerLeft: calc(50vw - 8rem);
+}
+._toastContainer {
+  pointer-events: all;
 }
 
 body {

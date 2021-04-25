@@ -985,6 +985,11 @@
   dependencies:
     "@types/node" "*"
 
+"@zerodevx/svelte-toast@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@zerodevx/svelte-toast/-/svelte-toast-0.2.2.tgz#af1d2562bef62d144526ce62f33d690ff7507c09"
+  integrity sha512-zriB7tSY54OEbRDqJ1NbHBv5Z83tWKhqqW7a+z8HMtZeR49zZUMLISFXmY7B8tMwzO6auB3A5dxuFyqB9+TZkQ==
+
 accepts@~1.3.5, accepts@~1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.7.tgz#531bc726517a3b2b41f850021c6cc15eaab507cd"

@@ -1,6 +1,22 @@
 <script>
   import ResetButton from "$components/ResetButton.svelte";
   import Score from "$components/Score.svelte";
+  import { registerSW } from "virtual:pwa-register";
+  import { toast, SvelteToast } from "@zerodevx/svelte-toast";
+
+  (window as any).refreshSW = registerSW({
+    onNeedRefresh() {
+      toast.push(
+        `New update! <button onclick="refreshSW(true)" style="pointer-events: all; margin-top: 0.5rem;">Click to update</button>`,
+        { duration: 60000 }
+      );
+    },
+    onOfflineReady() {
+      toast.push("App is installed and can now be used offline!", {
+        duration: 15000,
+      });
+    },
+  });
 </script>
 
 <header>
@@ -10,6 +26,7 @@
   <Score team="{1}" />
   <Score team="{2}" />
   <ResetButton />
+  <SvelteToast options="{{ reversed: true, intro: { y: 192 } }}" />
 </main>
 
 <style>

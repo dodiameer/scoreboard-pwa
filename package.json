@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "next",
+    "@zerodevx/svelte-toast": "^0.2.2",
     "https-localhost": "^4.6.4",
     "svelte": "^3.35.0",
     "svelte-preprocess": "^4.6.9",

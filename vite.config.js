@@ -32,8 +32,9 @@ export default defineConfig({
       },
       workbox: {
         // workbox options for generateSW 
+        // skipWaiting: true,
       },
-      registerType: "autoUpdate"
+      registerType: "prompt"
     })
   ],
   resolve: {
