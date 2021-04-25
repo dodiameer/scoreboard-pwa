@@ -1,4 +1,5 @@
-import { writable } from "svelte/store";
+// import { writable } from "svelte/store";
+import persistedStore from "$lib/utils/presistedStore";
 import type { IScores } from "$lib/types/scores";
 import type { ITeamNames } from "$lib/types/teamNames";
 
@@ -12,5 +13,9 @@ export const DEFAULT_VALUES = {
     team2: "Team 2",
   },
 };
-export const scores = writable<IScores>({ ...DEFAULT_VALUES.scores });
-export const teamNames = writable<ITeamNames>({ ...DEFAULT_VALUES.teamNames });
+export const scores = persistedStore<IScores>("scores", {
+  ...DEFAULT_VALUES.scores,
+});
+export const teamNames = persistedStore<ITeamNames>("teamNames", {
+  ...DEFAULT_VALUES.teamNames,
+});
