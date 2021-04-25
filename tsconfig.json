@@ -31,7 +31,8 @@
       "$lib/*": ["./src/lib/*"],
       "$assets/*": ["./src/assets/*"],
       "$components/*": ["./src/components/*"]
-    }
+    },
+    "types": ["vite-plugin-pwa/client"]
   },
   /**
    * Use global.d.ts instead of compilerOptions.types

@@ -1,6 +1,5 @@
 import App from "./App.svelte";
 import "$assets/global.css";
-// @ts-ignore
 import { registerSW } from "virtual:pwa-register";
 
 const app = new App({
