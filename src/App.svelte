@@ -23,8 +23,10 @@
   <h1>YNWAScore</h1>
 </header>
 <main>
-  <Score team="{1}" />
-  <Score team="{2}" />
+  <div class="score-wrapper">
+    <Score team="{1}" />
+    <Score team="{2}" />
+  </div>
   <ResetButton />
   <SvelteToast options="{{ reversed: true, intro: { y: 192 } }}" />
 </main>
@@ -46,10 +48,38 @@
     justify-content: center;
     padding-bottom: 5rem;
   }
+  .score-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   main :global(.svelte-component-hook.score):first-of-type {
     margin-bottom: 2rem;
   }
   main :global(.svelte-component-hook.reset-button) {
     margin-top: 1rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .score-wrapper {
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+    }
+
+    main :global(.svelte-component-hook.score):first-of-type {
+      margin-bottom: 0;
+    }
+    main :global(.svelte-component-hook.reset-button) {
+      width: 50%;
+      max-width: 20rem;
+    }
+    main {
+      padding: 2rem 5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
   }
 </style>
